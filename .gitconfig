@@ -1,0 +1,12 @@
+[include]
+  path = ~/.gitconfig-core
+  path = ~/.gitconfig-aliases
+[user]
+  name = Ross-Hunter
+  email = ross-hunter@ross-hunter.com
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true

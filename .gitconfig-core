@@ -1,0 +1,17 @@
+[branch]
+  autosetuprebase = always
+[rebase]
+  autosquash = true
+  autostash = true
+[diff]
+  renames = true
+[core]
+  excludesfile = ~/.gitignore_global
+  mergeoptions = --no-ff
+  autocrlf = input
+[push]
+  default = simple
+[credential]
+  helper = osxkeychain
+[remote "origin"]
+  prune = true

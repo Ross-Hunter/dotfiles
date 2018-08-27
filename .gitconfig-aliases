@@ -1,0 +1,51 @@
+[alias]
+  a = add -A
+
+  s = status -s
+  st = status -s
+
+  co = checkout
+
+  p = pull
+  pl = pull
+  pul = pull
+  pulll = pull
+
+  pus = push
+  puhs = push
+
+  re = rebase
+  rebae = rebase
+
+  rc = rebase --continue
+
+  fp = push --force-with-lease
+
+  mc = commit --no-edit
+
+  # Push your branch to the remote
+  cbranch = rev-parse --abbrev-ref HEAD
+  pushr = !git push -u origin `git cbranch`
+
+  stashall = !git add -A && git stash
+
+  # Pretty log output
+  lg = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+  # Make a quick WIP commit
+  wip = !git add -A && git commit -m 'WIP'
+
+  # Commit all changes
+  ca = !git add -A && git commit -av
+
+  # Switch to a branch, creating it if necessary
+  go = !git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\";
+
+  # Amend the currently staged files to the latest commit
+  amend = commit --amend --reuse-message=HEAD
+
+  # Interactive rebase with the given number of latest commits
+  reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+  # Delete merged branches
+  clb = !git branch --merged | grep  -v '\\*\\|master\\|develop\\|staging' | xargs -n 1 git branch -d
